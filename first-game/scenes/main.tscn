@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://rfupnykxb4yc"]
+
+[ext_resource type="PackedScene" uid="uid://8p1yvuc4go0h" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://611ppovcggjc" path="res://scenes/Platform.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://di110t27i48qu" path="res://scenes/Box.tscn" id="3_sugp2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(-142, -125)
+Speed = 600
+Gravity = 980.0
+JumpForce = 600
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Platform" parent="." instance=ExtResource("2_0wfyh")]
+
+[node name="Box" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(-138.99998, -405)
+rotation = 0.5846853
+mass = 0.035

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8p1yvuc4go0h"]
+
+[ext_resource type="Script" uid="uid://cnn6bq2k6vjuv" path="res://scripts/Player.cs" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://dy0hpwiq822n0" path="res://assets/Soldier.png" id="2_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 18.0
+height = 70.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(35.137436, 31.319107, 29.791977, 33.29692)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 10)
+shape = SubResource("CapsuleShape2D_g2els")
