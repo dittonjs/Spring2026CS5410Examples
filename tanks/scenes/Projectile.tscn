@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://caje7jbuvxhld"]
+
+[ext_resource type="Script" uid="uid://caibfxgjwnnss" path="res://scenes/Projectile.cs" id="1_vihyi"]
+[ext_resource type="Texture2D" uid="uid://c8mv34pnbvd7c" path="res://icon.svg" id="2_kdm4f"]
+[ext_resource type="Shape2D" uid="uid://dqtd7x36gwdas" path="res://assets/ProjectileCollisionShape2D.tres" id="3_13obt"]
+[ext_resource type="PackedScene" uid="uid://dys673h07lrtk" path="res://scenes/HurtboxComponent.tscn" id="4_du7tx"]
+
+[node name="Projectile" type="RigidBody2D"]
+mass = 0.001
+script = ExtResource("1_vihyi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.95152706, 0.11663716, 0.32055148, 1)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_kdm4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("3_13obt")
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("4_du7tx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = ExtResource("3_13obt")
