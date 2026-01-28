@@ -1,12 +1,13 @@
 using Godot;
 using System;
 
+[Tool]
 public partial class HealthComponent : Node2D
 {
     [Export]
     public int MaxHealth = 100;
 
-    private int currentHealth;
+    public int currentHealth { get; private set; }
 
     public override void _Ready()
     {
@@ -16,6 +17,7 @@ public partial class HealthComponent : Node2D
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        HealthChanged?.Invoke(currentHealth, MaxHealth);
         GD.Print("Ouch!");
         if (currentHealth <= 0)
         {
@@ -24,6 +26,8 @@ public partial class HealthComponent : Node2D
             GD.Print("Entity died");
         }
     }
+
+    public event Action<int, int> HealthChanged;
 
     public event Action Died;
 }

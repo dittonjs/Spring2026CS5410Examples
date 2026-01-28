@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://iabg4bpepa62"]
+
+[ext_resource type="Script" uid="uid://dcf0vkls5c1lr" path="res://scripts/components/SimpleAiTankController.cs" id="1_uwy11"]
+
+[node name="SimpleAiTankController" type="Node2D"]
+script = ExtResource("1_uwy11")

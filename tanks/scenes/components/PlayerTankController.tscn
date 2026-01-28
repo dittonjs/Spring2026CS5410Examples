@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvgdmp7idtqjo"]
 
-[ext_resource type="Script" uid="uid://bbmw0d68tj34q" path="res://scenes/PlayerTankController.cs" id="1_v7d1v"]
+[ext_resource type="Script" uid="uid://bbmw0d68tj34q" path="res://scripts/components/PlayerTankController.cs" id="1_v7d1v"]
 
 [node name="PlayerTankController" type="Node2D"]
 position = Vector2(0, -1)

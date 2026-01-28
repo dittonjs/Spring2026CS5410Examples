@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://didqtu7bv274"]
+
+[ext_resource type="Script" uid="uid://dmeif2086b4tf" path="res://scripts/components/HealthBarComponent.cs" id="1_2kdjp"]
+
+[node name="HealthBarComponent" type="Node2D"]
+position = Vector2(1, -1)
+script = ExtResource("1_2kdjp")

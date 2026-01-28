@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf5f5u4yw0pov"]
+
+[ext_resource type="PackedScene" uid="uid://dok0vhj8qbe7e" path="res://scenes/entities/Wall.tscn" id="1_5vxlb"]
+[ext_resource type="PackedScene" uid="uid://cf1p1pkge2a3e" path="res://scenes/entities/Tank.tscn" id="1_xnrmx"]
+[ext_resource type="PackedScene" uid="uid://bvgdmp7idtqjo" path="res://scenes/components/PlayerTankController.tscn" id="2_wplmo"]
+[ext_resource type="PackedScene" uid="uid://iabg4bpepa62" path="res://scenes/components/SimpleAITankController.tscn" id="3_wplmo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("1_5vxlb")]
+position = Vector2(-1556, 271)
+scale = Vector2(1.0035014, 60.3396)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("1_5vxlb")]
+position = Vector2(11108.002, 271)
+scale = Vector2(1.0035014, 60.3396)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("1_5vxlb")]
+position = Vector2(4758, 4070)
+scale = Vector2(98.31999, 1)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("1_5vxlb")]
+position = Vector2(4758, -3538)
+scale = Vector2(98.31999, 1)
+
+[node name="Tank" parent="." groups=["PlayerTank"] instance=ExtResource("1_xnrmx")]
+position = Vector2(1926, -1003)
+
+[node name="TankController" parent="Tank" instance=ExtResource("2_wplmo")]
+
+[node name="Camera2D" type="Camera2D" parent="Tank"]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
+[node name="Tank2" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(3746, 173)
+
+[node name="TankController" parent="Tank2" instance=ExtResource("3_wplmo")]
+
+[node name="Tank3" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(1748, 1682)
+
+[node name="TankController" parent="Tank3" instance=ExtResource("3_wplmo")]
+
+[node name="Tank4" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(-363, 173)
+
+[node name="TankController" parent="Tank4" instance=ExtResource("3_wplmo")]
+
+[node name="Tank5" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(7987, 173)
+
+[node name="TankController" parent="Tank5" instance=ExtResource("3_wplmo")]
+
+[node name="Tank6" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(5221, -1921)
+
+[node name="TankController" parent="Tank6" instance=ExtResource("3_wplmo")]
+
+[node name="Tank7" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(763, -1921)
+
+[node name="TankController" parent="Tank7" instance=ExtResource("3_wplmo")]
+
+[node name="Tank9" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(8772, -1921)
+
+[node name="TankController" parent="Tank9" instance=ExtResource("3_wplmo")]
+
+[node name="Tank8" parent="." instance=ExtResource("1_xnrmx")]
+position = Vector2(5754, 2354)
+
+[node name="TankController" parent="Tank8" instance=ExtResource("3_wplmo")]

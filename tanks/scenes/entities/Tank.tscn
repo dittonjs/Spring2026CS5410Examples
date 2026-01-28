@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf1p1pkge2a3e"]
+
+[ext_resource type="Script" uid="uid://davl87k1fmnv2" path="res://scripts/entities/Tank.cs" id="1_cpxye"]
+[ext_resource type="Shader" uid="uid://1io53u16351v" path="res://scripts/shaders/Color.gdshader" id="1_rthxu"]
+[ext_resource type="Texture2D" uid="uid://c8mv34pnbvd7c" path="res://icon.svg" id="2_gyojk"]
+[ext_resource type="PackedScene" uid="uid://bn6emf4a0kxsh" path="res://scenes/entities/ProjectileSpawner.tscn" id="3_0heh6"]
+[ext_resource type="PackedScene" uid="uid://caje7jbuvxhld" path="res://scenes/entities/Projectile.tscn" id="4_tinmt"]
+[ext_resource type="Shape2D" uid="uid://c5uxvg3s3jddw" path="res://assets/TankCollisionShape2D.tres" id="5_q0k83"]
+[ext_resource type="PackedScene" uid="uid://sdtr22yyip6j" path="res://scenes/components/HealthComponent.tscn" id="6_afltc"]
+[ext_resource type="PackedScene" uid="uid://bag7m1i5886t2" path="res://scenes/components/HitboxComponent.tscn" id="7_ike63"]
+[ext_resource type="PackedScene" uid="uid://didqtu7bv274" path="res://scenes/components/HealthBarComponent.tscn" id="8_wmkah"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10kri"]
+shader = ExtResource("1_rthxu")
+
+[node name="Tank" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_10kri")
+script = ExtResource("1_cpxye")
+
+[node name="Body" type="Sprite2D" parent="."]
+use_parent_material = true
+scale = Vector2(1.2734375, 1)
+texture = ExtResource("2_gyojk")
+
+[node name="Turret" type="Node2D" parent="."]
+use_parent_material = true
+
+[node name="Base" type="Sprite2D" parent="Turret"]
+use_parent_material = true
+scale = Vector2(0.6953125, 0.625)
+texture = ExtResource("2_gyojk")
+
+[node name="Barrel" type="Sprite2D" parent="Turret"]
+use_parent_material = true
+position = Vector2(59, 0)
+scale = Vector2(1, 0.21875)
+texture = ExtResource("2_gyojk")
+
+[node name="ProjectileSpawner" parent="Turret" instance=ExtResource("3_0heh6")]
+position = Vector2(135, 0)
+ProjectileScene = ExtResource("4_tinmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = ExtResource("5_q0k83")
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_afltc")]
+position = Vector2(0, -1)
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("7_ike63")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = ExtResource("5_q0k83")
+
+[node name="HealthBarComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("8_wmkah")]
+position = Vector2(-70, -88)
+healthComponent = NodePath("../HealthComponent")
+Width = 140

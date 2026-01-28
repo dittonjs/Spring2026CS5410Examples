@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://caje7jbuvxhld"]
+
+[ext_resource type="Script" uid="uid://caibfxgjwnnss" path="res://scripts/components/Projectile.cs" id="1_bj3k0"]
+[ext_resource type="Texture2D" uid="uid://c8mv34pnbvd7c" path="res://icon.svg" id="2_wn5ru"]
+[ext_resource type="Shape2D" uid="uid://dqtd7x36gwdas" path="res://assets/ProjectileCollisionShape2D.tres" id="3_dwf08"]
+[ext_resource type="PackedScene" uid="uid://dys673h07lrtk" path="res://scenes/components/HurtboxComponent.tscn" id="4_5yemg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bj3k0"]
+lifetime_randomness = 0.53
+particle_flag_disable_z = true
+angle_min = -155.59999
+angle_max = 219.90001
+velocity_pivot = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 25.939999
+initial_velocity_max = 197.48999
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.099999994
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.2
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_bj3k0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.95152706, 0.11663716, 0.32055148, 1)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_wn5ru")
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("4_5yemg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = ExtResource("3_dwf08")
+
+[node name="Explosion" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+texture = ExtResource("2_wn5ru")
+one_shot = true
+explosiveness = 1.0
+randomness = 0.55
+process_material = SubResource("ParticleProcessMaterial_bj3k0")
