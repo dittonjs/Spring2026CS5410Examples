@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ba8ktlhiyu42t"]
+
+[ext_resource type="Script" uid="uid://dkrv2108igpnk" path="res://scenes/components/SeparationSteeringBehavior.cs" id="1_tr5rd"]
+
+[node name="SeparationSteeringBehavior" type="Node2D" unique_id=712290387]
+script = ExtResource("1_tr5rd")

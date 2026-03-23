@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ck2j8olga3gvx"]
+
+[ext_resource type="Shader" uid="uid://gcso7nnbb2b8" path="res://blur.gdshader" id="1_2fyry"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://icon.svg" id="2_6f1fw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
+resource_local_to_scene = true
+shader = ExtResource("1_2fyry")
+shader_parameter/blur_distance = 0.1
+
+[node name="Icon2" type="Sprite2D" unique_id=2011785394]
+material = SubResource("ShaderMaterial_1bvp3")
+position = Vector2(1, 0)
+texture = ExtResource("2_6f1fw")

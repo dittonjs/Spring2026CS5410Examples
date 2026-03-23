@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cicpbvqpy7yyo"]
+
+[ext_resource type="Script" uid="uid://bhvclt4aqnwdm" path="res://scenes/components/SeekSteeringBehavior.cs" id="1_vcmn0"]
+
+[node name="SeekSteeringBehavior" type="Node2D" unique_id=571650848]
+script = ExtResource("1_vcmn0")

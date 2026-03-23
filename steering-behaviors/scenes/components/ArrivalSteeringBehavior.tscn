@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0a0i6ls4mcu6"]
+
+[ext_resource type="Script" uid="uid://dm67yqtfj2m1m" path="res://scenes/components/ArrivalSteeringBehavior.cs" id="1_i04nx"]
+
+[node name="ArrivalSteeringBehavior" type="Node2D" unique_id=446616989]
+script = ExtResource("1_i04nx")

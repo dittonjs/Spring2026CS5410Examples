@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://g4ixc1ok0m8w"]
+
+[ext_resource type="Shader" uid="uid://cufgijp8rvkrx" path="res://color_invert.gdshader" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ck2j8olga3gvx" path="res://BlurryIcon.tscn" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Shader" uid="uid://gcso7nnbb2b8" path="res://blur.gdshader" id="2_1bvp3"]
+[ext_resource type="Shader" uid="uid://oinbshsrpix5" path="res://simple_vertex.gdshader" id="5_lquwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+resource_local_to_scene = true
+shader = ExtResource("2_1bvp3")
+shader_parameter/blur_distance = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
+shader = ExtResource("1_0xm2m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
+resource_local_to_scene = true
+shader = ExtResource("2_1bvp3")
+shader_parameter/blur_distance = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
+shader = ExtResource("5_lquwl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("5_lquwl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7mycd"]
+subdivide_width = 100
+subdivide_depth = 100
+
+[node name="Main" type="Node2D" unique_id=1804970209]
+
+[node name="BlurryIcon" parent="." unique_id=2011785394 instance=ExtResource("1_h2yge")]
+material = SubResource("ShaderMaterial_7mycd")
+position = Vector2(247, 338)
+
+[node name="ColorInvert" type="Sprite2D" parent="." unique_id=1925598658]
+material = SubResource("ShaderMaterial_h2yge")
+position = Vector2(447, 209)
+texture = ExtResource("1_ig7tw")
+
+[node name="BlurryIcon2" parent="." unique_id=134800667 instance=ExtResource("1_h2yge")]
+material = SubResource("ShaderMaterial_272bh")
+position = Vector2(226, 139)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1211821503]
+material = SubResource("ShaderMaterial_5vw27")
+position = Vector2(678, 490)
+texture = ExtResource("1_ig7tw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1541894201]
+material = SubResource("ShaderMaterial_lquwl")
+position = Vector2(840.99994, 234)
+scale = Vector2(100, 100)
+mesh = SubResource("QuadMesh_7mycd")
+texture = ExtResource("1_ig7tw")

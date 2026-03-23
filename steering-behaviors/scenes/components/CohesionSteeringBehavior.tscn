@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://lf5iqv85vh5p"]
+
+[ext_resource type="Script" uid="uid://c3vgodcdwrb6p" path="res://scenes/components/CohesionSteeringBehavior.cs" id="1_2chlq"]
+
+[node name="CohesionSteeringBehavior" type="Node2D" unique_id=1876608890]
+script = ExtResource("1_2chlq")

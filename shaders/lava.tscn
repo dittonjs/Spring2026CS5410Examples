@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dracspi1fa7xa"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://icon.svg" id="1_34hvj"]
+[ext_resource type="Shader" uid="uid://b6twcyrmutrbv" path="res://lava.gdshader" id="1_gil3p"]
+[ext_resource type="Shader" uid="uid://324vgm310ipv" path="res://heat_ripple.gdshader" id="1_jefjt"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jefjt"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_duv81"]
+noise = SubResource("FastNoiseLite_jefjt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_duv81"]
+shader = ExtResource("1_jefjt")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_duv81")
+shader_parameter/distortion_strength = 0.01
+shader_parameter/scroll_speed = 0.4
+shader_parameter/noise_scale = 3.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gil3p"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jefjt"]
+noise = SubResource("FastNoiseLite_gil3p")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jefjt"]
+shader = ExtResource("1_gil3p")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_jefjt")
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_gil3p"]
+subdivide_width = 100
+subdivide_depth = 100
+
+[node name="Lava" type="Node2D" unique_id=1793332711]
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=202706600]
+position = Vector2(-152, 50)
+color = Color(0.38928655, 0.38928664, 0.38928658, 1)
+polygon = PackedVector2Array(286, 422, 363, 329, 444, 255, 532, 288, 625, 258, 662, 236, 706, 271, 753, 334, 801, 406, 787, 499, 731, 560, 680, 576, 526, 560, 465, 561, 389, 605, 295, 590, 259, 566, 244, 499)
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=213168420]
+position = Vector2(783, 204)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("1_34hvj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1797057880]
+position = Vector2(545, 41)
+color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+polygon = PackedVector2Array(297, 249, 497, 333, 528, 398, 532, 525, 345, 596, 159, 555, 83, 494, 113, 409, 169, 323, 234, 285, 258, 253)
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=798243436]
+position = Vector2(825, 422)
+texture = ExtResource("1_34hvj")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1996316170]
+material = SubResource("ShaderMaterial_duv81")
+position = Vector2(603, 341)
+scale = Vector2(9.46875, 5.359375)
+texture = ExtResource("1_34hvj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1434526536]
+material = SubResource("ShaderMaterial_jefjt")
+position = Vector2(567, 587.00006)
+scale = Vector2(1272.9999, 162.00003)
+mesh = SubResource("QuadMesh_gil3p")
+texture = ExtResource("1_34hvj")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1308290910]
+position = Vector2(-727, 1059)
+texture = ExtResource("1_34hvj")

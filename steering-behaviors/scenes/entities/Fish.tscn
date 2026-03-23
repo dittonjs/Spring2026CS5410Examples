@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://by6j1kvpb8im4"]
+
+[ext_resource type="Script" uid="uid://cligbg466numd" path="res://scenes/entities/Fish.cs" id="1_xa3kr"]
+[ext_resource type="Texture2D" uid="uid://ci0sspljs3nom" path="res://fish.png" id="2_jp144"]
+[ext_resource type="PackedScene" uid="uid://ba8ktlhiyu42t" path="res://scenes/components/SeparationSteeringBehavior.tscn" id="4_jn3a3"]
+[ext_resource type="PackedScene" uid="uid://cicpbvqpy7yyo" path="res://scenes/components/SeekSteeringBehavior.tscn" id="4_vy067"]
+[ext_resource type="PackedScene" uid="uid://0a0i6ls4mcu6" path="res://scenes/components/ArrivalSteeringBehavior.tscn" id="5_jn3a3"]
+[ext_resource type="PackedScene" uid="uid://lf5iqv85vh5p" path="res://scenes/components/CohesionSteeringBehavior.tscn" id="6_e4k7n"]
+[ext_resource type="PackedScene" uid="uid://kmew86kmtgq0" path="res://scenes/components/CollisionAvoidanceSteeringBehavior.tscn" id="7_o17rs"]
+[ext_resource type="PackedScene" uid="uid://scby8kgjrao" path="res://scenes/components/AlignmentSteeringBehavior.tscn" id="7_ob8rq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vy067"]
+radius = 67.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy067"]
+size = Vector2(66, 14)
+
+[node name="Fish" type="Node2D" unique_id=1228313173]
+script = ExtResource("1_xa3kr")
+
+[node name="Fish" type="Sprite2D" parent="." unique_id=2003725296]
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jp144")
+
+[node name="SeekSteeringBehavior" parent="." unique_id=1498038135 instance=ExtResource("4_vy067")]
+
+[node name="SeparationSteeringBehavior" parent="." unique_id=712290387 instance=ExtResource("4_jn3a3")]
+
+[node name="ArrivalSteeringBehavior" parent="." unique_id=446616989 instance=ExtResource("5_jn3a3")]
+position = Vector2(939.77124, -80.5045)
+
+[node name="CohesionSteeringBehavior" parent="." unique_id=1876608890 instance=ExtResource("6_e4k7n")]
+
+[node name="CollisionAvoidanceSteeringBehavior" parent="." unique_id=1699896357 node_paths=PackedStringArray("rayCast2D") instance=ExtResource("7_o17rs")]
+rayCast2D = NodePath("../RayCast2D")
+
+[node name="AlignmentSteeringBehavior" parent="." unique_id=1187250052 instance=ExtResource("7_ob8rq")]
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=681830409]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=721244705]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_vy067")
+
+[node name="FishArea" type="Area2D" parent="." unique_id=1597513660]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishArea" unique_id=1761631179]
+shape = SubResource("RectangleShape2D_vy067")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1949421054]
+target_position = Vector2(152, 0)

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cbd0r4okx0brv"]
+
+[ext_resource type="Script" uid="uid://xs12fqkgurfy" path="res://scenes/entities/FishSpawner.cs" id="1_g01w4"]
+
+[node name="FishSpawner" type="Node2D" unique_id=531856508]
+script = ExtResource("1_g01w4")
+FishCount = 20

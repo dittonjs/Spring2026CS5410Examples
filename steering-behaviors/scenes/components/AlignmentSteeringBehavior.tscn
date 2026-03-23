@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://scby8kgjrao"]
+
+[ext_resource type="Script" uid="uid://3hjwn5x6s0l3" path="res://scenes/components/AlignmentSteeringBehavior.cs" id="1_mpheh"]
+
+[node name="AlignmentSteeringBehavior" type="Node2D" unique_id=1187250052]
+script = ExtResource("1_mpheh")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://kmew86kmtgq0"]
+
+[ext_resource type="Script" uid="uid://pk6d6c8bm0d2" path="res://scenes/components/CollisionAvoidanceSteeringBehavior.cs" id="1_o61tj"]
+
+[node name="CollisionAvoidanceSteeringBehavior" type="Node2D" unique_id=1699896357]
+script = ExtResource("1_o61tj")
