@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bfo80rok13jff"]
+
+[ext_resource type="Script" uid="uid://c2q8rumo2yap" path="res://Main.cs" id="1_glv2v"]
+
+[node name="Main" type="Node2D" unique_id=744745118 node_paths=PackedStringArray("hostInput", "join", "server")]
+script = ExtResource("1_glv2v")
+hostInput = NodePath("CanvasLayer/VBoxContainer/LineEdit")
+join = NodePath("CanvasLayer/VBoxContainer/Join")
+server = NodePath("CanvasLayer/VBoxContainer/Server")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1175049147]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=190362506]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Server" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1820612413]
+layout_mode = 2
+text = "Start Server
+"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/VBoxContainer" unique_id=750113214]
+layout_mode = 2
+
+[node name="Join" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=576540637]
+layout_mode = 2
+text = "Join
+"
