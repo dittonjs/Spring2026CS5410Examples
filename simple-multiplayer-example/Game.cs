@@ -1,8 +1,11 @@
 using Godot;
 using System;
-
+// 144.39.105.125
 public partial class Game : Node2D
 {
+    [Export]
+    PackedScene PlayerScene;
+
     public override void _Ready()
     {
         GameManager.Instance.Start();
@@ -13,13 +16,16 @@ public partial class Game : Node2D
     {
         if (!Multiplayer.IsServer()) return;
 
-        GD.Print("New peer connected: " + id);
+        Node player = PlayerScene.Instantiate();
+        player.Name = id.ToString();
+
+        CallDeferred("add_child", player);
     }
 
     public void PeerDisconnected(long id)
     {
         if (!Multiplayer.IsServer()) return;
 
-        GD.Print("Peer disconnected!");
+        GetNode(id.ToString()).QueueFree();
     }
 }
