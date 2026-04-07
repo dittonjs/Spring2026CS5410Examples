@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://kb7lc48trh5w"]
+
+[ext_resource type="Script" uid="uid://cuac8rpb5las7" path="res://Player.cs" id="1_xhfnw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kpjcp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kne1u"]
+albedo_color = Color(0, 0.44705883, 0.34901962, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e80uo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cxr5p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tdg3f"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1813146583 node_paths=PackedStringArray("RotationPoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_xhfnw")
+RotationPoint = NodePath("RotationPoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=267715379]
+mesh = SubResource("CapsuleMesh_kpjcp")
+surface_material_override/0 = SubResource("StandardMaterial3D_kne1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1871059610]
+shape = SubResource("CapsuleShape3D_e80uo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=416556609]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5092797, -0.4828292)
+mesh = SubResource("SphereMesh_cxr5p")
+
+[node name="RotationPoint" type="Node3D" parent="." unique_id=1749437588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5770714, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="RotationPoint" unique_id=1036094844]
+shape = SubResource("SphereShape3D_tdg3f")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="RotationPoint/SpringArm3D" unique_id=2132773277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

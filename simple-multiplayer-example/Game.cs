@@ -11,12 +11,14 @@ public partial class Game : Node2D
         GameManager.Instance.Start();
         Multiplayer.PeerConnected += PeerConnected;
         Multiplayer.PeerDisconnected += PeerDisconnected;
+
     }
     public void PeerConnected(long id)
     {
         if (!Multiplayer.IsServer()) return;
 
         Node player = PlayerScene.Instantiate();
+
         player.Name = id.ToString();
 
         CallDeferred("add_child", player);

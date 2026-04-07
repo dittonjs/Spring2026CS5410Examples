@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://f4g6sincmhpu"]
+
+[ext_resource type="Script" uid="uid://dlv0hu5vkymcp" path="res://scripts/Character.cs" id="1_3i3nt"]
+[ext_resource type="Texture2D" uid="uid://cctqsf8tkjo5v" path="res://assets/Dungeon_Character.png" id="2_apuoc"]
+
+[node name="Character" type="CharacterBody2D" unique_id=893840460]
+script = ExtResource("1_3i3nt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=942050215]
+texture = ExtResource("2_apuoc")
+region_enabled = true
+region_rect = Rect2(0.03766632, 32.53922, 16.421104, 15.629723)

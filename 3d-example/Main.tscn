@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dtnquah3itmdx"]
+
+[ext_resource type="PackedScene" uid="uid://cq2xpuk04r5me" path="res://Floor.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://c1exyholumhj" path="res://Box.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://kb7lc48trh5w" path="res://Player.tscn" id="4_fos0i"]
+
+[node name="Main" type="Node3D" unique_id=723375379]
+
+[node name="Floor" parent="." unique_id=400236326 instance=ExtResource("1_glv2v")]
+
+[node name="Box" parent="." unique_id=1848828580 instance=ExtResource("2_uu6xs")]
+transform = Transform3D(0.92605513, 0.37738827, 0, -0.36113614, 0.88617486, -0.29030138, -0.10955634, 0.2688351, 0.9569353, 1.1494858, 2.5928152, -1.2523613)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1368047271]
+transform = Transform3D(0.63152874, -0.32209978, 0.70528233, 0, 0.90962803, 0.41542366, -0.7753525, -0.262352, 0.5744562, 0, 10.102477, 25.405014)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1813146583 instance=ExtResource("4_fos0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.012241)

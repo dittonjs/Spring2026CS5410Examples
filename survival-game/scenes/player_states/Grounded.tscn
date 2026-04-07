@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4liqxlec37pm"]
+
+[ext_resource type="Script" uid="uid://vwcmaosdsfou" path="res://scenes/player_states/Grounded.cs" id="1_oapke"]
+
+[node name="Grounded" type="Node2D" unique_id=1433066386]
+script = ExtResource("1_oapke")

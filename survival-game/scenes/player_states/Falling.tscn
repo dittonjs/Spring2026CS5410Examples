@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3osmyd2iei3m"]
+
+[ext_resource type="Script" uid="uid://coyd4843b1qm6" path="res://scenes/player_states/Falling.cs" id="1_txo1a"]
+
+[node name="Falling" type="Node2D" unique_id=426483529]
+script = ExtResource("1_txo1a")

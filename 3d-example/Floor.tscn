@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cq2xpuk04r5me"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_spmh5"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wm4b4"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Floor" type="StaticBody3D" unique_id=610585966]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1977116817]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_spmh5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1477624296]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wm4b4")

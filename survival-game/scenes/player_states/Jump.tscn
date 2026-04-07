@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ulrtljh6kr27"]
+
+[ext_resource type="Script" uid="uid://c2o67f0nfkk5m" path="res://scenes/player_states/Jump.cs" id="1_voeak"]
+
+[node name="Jump" type="Node2D" unique_id=243989336]
+script = ExtResource("1_voeak")

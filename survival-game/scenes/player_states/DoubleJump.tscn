@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6h5rr5l888h1"]
+
+[ext_resource type="Script" uid="uid://dcbyi00ko1u5q" path="res://scenes/player_states/DoubleJump.cs" id="1_oha3l"]
+
+[node name="DoubleJump" type="Node2D" unique_id=1756902084]
+script = ExtResource("1_oha3l")

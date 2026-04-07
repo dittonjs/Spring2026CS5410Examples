@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://6mjmh1v3jslo"]
+
+[ext_resource type="Script" uid="uid://c76o44b14n1rd" path="res://scripts/Player.cs" id="1_v6fml"]
+[ext_resource type="Texture2D" uid="uid://cctqsf8tkjo5v" path="res://assets/Dungeon_Character.png" id="2_3li8b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdl7e"]
+radius = 5.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1914622248]
+script = ExtResource("1_v6fml")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1018979585]
+texture = ExtResource("2_3li8b")
+region_enabled = true
+region_rect = Rect2(0.03766632, 32.53922, 16.421104, 15.629723)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883558801]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_mdl7e")
